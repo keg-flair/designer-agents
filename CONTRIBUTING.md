@@ -1,5 +1,7 @@
 ## Contributing
 
+Thanks for helping improve these Cursor skills.
+
 ### Add a new agent (Cursor skill)
 
 1. Create a new folder in `.cursor/skills/<skill-name>/`
@@ -16,6 +18,8 @@ description: What it does + when to use it (include trigger terms).
    - Inputs to request (only if missing)
    - A repeatable workflow/checklist
    - A copy/paste-ready output template
+
+For more guidance, see `docs/WRITING_SKILLS.md`.
 
 ### Naming rules
 
