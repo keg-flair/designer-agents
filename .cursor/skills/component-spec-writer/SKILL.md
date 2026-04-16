@@ -5,6 +5,26 @@ description: Writes a component spec for a design system component: variants, st
 
 # Component Spec Writer
 
+## Defaults
+
+- **Tool-agnostic**: describe behaviors and token hooks without requiring a specific tool/plugin.
+- **System-first**: prefer extending existing primitives/patterns over creating new components.
+- **Spec is implementable**: include states, content rules, a11y, and QA checklist by default.
+
+## Constraints
+
+- **Do not invent** token sets, platform constraints, or existing component APIs—state assumptions and offer options.
+- **Ask at most 3 clarifying questions** if it changes the API surface (platform(s), theming, accessibility target).
+- **Minimize invalid combinations**: prefer constraints via prop design rather than long “invalid combos” lists.
+
+## Clarifying questions (ask max 3)
+
+Ask only if it changes the spec’s API surface or required states.
+
+1. What are the **platform targets** (web/iOS/Android) and any parity requirements?
+2. What’s the **theming model** (light/dark, high-contrast, multiple brands) and must-support themes?
+3. What’s the **accessibility target** and any content constraints (localization, dynamic type)?
+
 ## Inputs to request (only if missing)
 
 - Component name + intended purpose
@@ -16,6 +36,9 @@ description: Writes a component spec for a design system component: variants, st
 
 ```markdown
 ## Component: [Name]
+### Assumptions/constraints
+- …
+
 ### Purpose
 - **What it is**: …
 - **When to use**: …
@@ -69,4 +92,10 @@ description: Writes a component spec for a design system component: variants, st
 ## Variant matrix guidance
 
 If the component is complex, include a compact matrix showing which combinations are valid/invalid and why (default to minimizing invalid combos).
+
+## Evidence + confidence rule
+
+When making spec decisions beyond what the user provided, include:
+- **Evidence**: what input drove the decision (existing pattern, constraint, platform guideline, user-provided requirement)
+- **Confidence**: High | Med | Low (what would raise confidence?)
 

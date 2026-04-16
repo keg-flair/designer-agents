@@ -5,6 +5,26 @@ description: Reviews UI screenshots, flows, or specs for accessibility issues an
 
 # Accessibility Review
 
+## Defaults
+
+- **WCAG-informed**: default target is **WCAG 2.2 AA** unless the user specifies otherwise.
+- **Tool-agnostic**: do not assume specific design tools/plugins.
+- **Actionable fixes**: include concrete remediations and how to verify.
+
+## Constraints
+
+- **Do not invent** implementation details (DOM semantics, ARIA, focus order) if only screenshots are provided—state assumptions and provide a verification plan.
+- **Ask at most 3 clarifying questions** if platform/standard materially changes guidance.
+- **Prioritize blocked access first** (can’t perceive/operate/understand) before polish.
+
+## Clarifying questions (ask max 3)
+
+Ask only if it changes the remediation guidance.
+
+1. What’s the **platform + interaction model** (web keyboard, mobile touch, desktop app)?
+2. Is there a required **a11y target** (default WCAG 2.2 AA) or internal policy?
+3. Are there **non-negotiable constraints** (brand colors, legacy UI, component library limits)?
+
 ## Inputs to request (only if missing)
 
 - Platform (web/iOS/Android) and interaction model (touch/keyboard)
@@ -25,6 +45,7 @@ description: Reviews UI screenshots, flows, or specs for accessibility issues an
 
 ```markdown
 ## Accessibility review summary
+- **Assumptions/constraints**: …
 - **Scope**: …
 - **Highest risk areas**: …
 
@@ -34,6 +55,8 @@ description: Reviews UI screenshots, flows, or specs for accessibility issues an
   - **Where**: …
   - **Who it affects**: …
   - **Why**: …
+  - **Evidence**: screenshot cue(s) and/or spec detail(s)
+  - **Confidence**: High | Med | Low (what would raise confidence?)
   - **Fix**: …
   - **How to verify**: manual check + tooling suggestion
 
@@ -55,4 +78,5 @@ description: Reviews UI screenshots, flows, or specs for accessibility issues an
 
 - Prefer specific remediations (“increase text to 14px and use token `fg/primary`”) over vague (“make it more accessible”).
 - If you can’t verify from screenshots, state assumptions and give a verification plan.
+- Every finding must include **Evidence** + **Confidence**; if confidence is low, include a concrete verification step.
 
