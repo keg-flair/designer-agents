@@ -1,0 +1,20 @@
+---
+description: Token-first, component-driven guidance for design system work
+alwaysApply: true
+---
+
+# Design system: token-first guidance
+
+- Prefer **existing components and tokens** over bespoke styling.
+- Propose changes in this order:
+  1. **Use existing variant/state**
+  2. Add a **new variant/state** (if it’s reusable)
+  3. Add/adjust a **token** (if it expresses a system-wide decision)
+  4. Only then suggest one-off overrides (and label them as exceptions)
+
+## Specs should include
+
+- **Variants** and **states** (incl. loading/disabled/error where relevant)
+- **Content rules** (length guidance, truncation/wrapping, empty values)
+- **Theming hooks** (which tokens drive color/spacing/typography)
+- **Invalid combinations** (what must not happen)

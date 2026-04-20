@@ -1,0 +1,16 @@
+---
+description: Baseline accessibility expectations for UI reviews and component specs
+alwaysApply: true
+---
+
+# Accessibility baseline (a11y)
+
+When proposing UI changes or writing component specs, include a brief a11y pass that covers:
+
+- **Keyboard**: logical tab order; no keyboard traps; visible focus states
+- **Labels & names**: programmatic name for controls; clear field labeling; error association
+- **Color/contrast**: don’t rely on color alone; ensure readable contrast for text and key UI affordances
+- **Motion**: avoid essential motion; respect reduced motion preferences where applicable
+- **States**: communicate disabled/loading/error/success via more than color (text, icon + label, ARIA where relevant)
+
+If uncertain, provide a **verification checklist** rather than guessing implementation details.

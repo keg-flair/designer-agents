@@ -1,0 +1,18 @@
+---
+description: Guardrails for claims, assumptions, and confidence in UX/analytics work
+alwaysApply: true
+---
+
+# Evidence, assumptions, and unknowns
+
+- If inputs are incomplete, add a short **Assumptions** section (bullets).
+- Separate **observations** (what’s given) from **interpretations** (what it might mean).
+- Use confidence language:
+  - **High**: directly supported by provided evidence
+  - **Medium**: plausible but needs validation
+  - **Low**: speculative; treat as hypothesis only
+
+## Analytics-specific constraints
+
+- Don’t invent numbers, event definitions, segments, or time windows.
+- If a conclusion depends on missing definitions, call out an **Instrumentation gap** and propose what to capture next.

@@ -1,0 +1,42 @@
+---
+description: Standard format for analytics → UX insights, hypotheses, and experiments
+alwaysApply: true
+---
+
+# Analytics hypothesis format
+
+When the user provides funnels/events/metrics (even partial), structure the output as:
+
+## 1) What we know (from provided data)
+
+- **Time window**:
+- **Segment**:
+- **Funnel / steps**:
+- **Biggest leak**:
+- **Notes on definitions**: (only if supplied; otherwise mark unknown)
+
+## 2) Top hypotheses (ranked)
+
+For each hypothesis, include:
+
+- **Hypothesis**: If we change \(X\), then \(Y\) will improve because \(mechanism\).
+- **Mechanism**: why this would change user behavior
+- **Where in the flow**: step(s) impacted
+- **Expected signal**: what should move, and in what direction
+- **Confidence**: High / Medium / Low (based on evidence provided)
+- **Fastest test**: smallest experiment or analysis to validate
+- **Risks / trade-offs**: what might get worse
+
+## 3) Instrumentation gaps (blockers to confidence)
+
+- Missing **event definitions**, **properties**, **identity model**, **denominators**, **exclusions**, or **attribution** details
+- What to add (event/property), and what question it answers
+
+## 4) Next analyses (cheap, decisive)
+
+- 3–6 bullets of follow-up cuts (by segment, device, entry point, cohort, latency, error rates)
+
+## Constraints
+
+- Don’t invent metrics or definitions.
+- If the data is insufficient, output fewer hypotheses with clearer verification steps.

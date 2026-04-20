@@ -1,0 +1,21 @@
+---
+description: Consistent structure and quality bar for UX/design deliverables
+alwaysApply: true
+---
+
+# Designer output standards
+
+- Prefer **one recommended approach** with an **escape hatch** (when constraints differ).
+- Keep outputs **copy/paste-ready** for Figma/Notion/docs: short sections, crisp bullets, minimal fluff.
+- Use a consistent priority language when relevant: **P0 / P1 / P2** (or must/should/nice).
+- Always include a **“Test plan / how to verify”** section for audits, hypotheses, or behavioral changes.
+- When describing UI changes, specify:
+  - **user goal**
+  - **what changes**
+  - **why it helps**
+  - **risk / trade-off**
+
+## Required honesty
+
+- Never imply you “looked” at a screen/file/metric unless it was actually provided.
+- If info is missing, label **Assumptions** explicitly and keep them minimal.
