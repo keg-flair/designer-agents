@@ -18,6 +18,18 @@ Use **Claude Projects** when you want:
 - a repeatable deliverable template (specs, audits) without depending on IDE tooling
 - to work from screenshots/links and produce docs you paste into Notion/Figma/etc.
 
+### At a glance (common tasks → where to start)
+
+| Task | Use in | Start with | Inputs that matter most |
+| --- | --- | --- | --- |
+| Modify an existing Figma screen/component | Cursor | `figma-master` → `figma-use` | Figma link with `node-id`, what must change, “don’t change” constraints |
+| Generate a new screen in Figma from a description | Cursor | `figma-master` → `figma-generate-design` | Target file/page, sections list, any reference screenshots, whether images exist |
+| “Here’s a Figma link—what do I do next?” | Cursor | `figma-triage` | Figma link with `node-id`, desired outcome, what “done” looks like |
+| Avoid hardcoding: find existing components/tokens/styles first | Cursor | `figma-design-system-discovery` | File key (or link), a known “reference screen” name (if any) |
+| Multi-step Figma work you may resume later | Cursor | `figma-cleanup-and-resume` | runId (if resuming), scope boundary, where to write ledger (`.cursor/figma/state.json`) |
+| Write a component/flow spec (handoff doc) | Claude Projects | `skills/design-specs-writer` | Screenshots/link, platforms, variants/states, constraints |
+| Run a competitive/heuristic audit | Claude Projects | `skills/competitive-design-audit` | Decision to inform, comparator list, evidence screenshots/links |
+
 ### Folder map
 
 - **Cursor skills**: `.cursor/skills/<skill-name>/SKILL.md`
