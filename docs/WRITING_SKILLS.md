@@ -12,7 +12,7 @@ Create:
 .cursor/skills/<skill-name>/SKILL.md
 ```
 
-If a skill is tool-agnostic and useful outside Cursor, also mirror it in:
+If a skill is tool-agnostic and useful outside Cursor, also add a Claude-compatible variant in:
 
 ```
 skills/<skill-name>/SKILL.md
@@ -21,9 +21,16 @@ skills/<skill-name>/SKILL.md
 ## Source of truth
 
 - **Primary**: `.cursor/skills/` + `.cursor/rules/` (Cursor behavior and enforcement)
-- **Mirror**: `skills/` (Claude-compatible copies)
+- **Variant**: `skills/` (Claude-compatible versions)
 
-When you update a shared skill, update both copies (or intentionally document why they differ).
+## Divergence policy (recommended)
+
+Divergence between `.cursor/skills/` and `skills/` is allowed and expected.
+
+- `.cursor/skills/` can be stricter and Cursor-specific (rules, integrations, “do X in Cursor” instructions).
+- `skills/` should remain tool-agnostic and shorter, and should not reference Cursor-only tooling.
+
+When you update a shared skill, update both versions when it improves both. If not, let them diverge intentionally.
 
 ## `SKILL.md` checklist
 

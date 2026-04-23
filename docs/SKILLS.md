@@ -5,7 +5,7 @@ This repo ships:
 - **Cursor project skills** under `.cursor/skills/`
 - **Claude-compatible skills** under `skills/`
 
-Most skills exist in both places; `.cursor/skills/` is what you copy into a Cursor repo, and `skills/` is the tool-agnostic version for Claude Projects.
+Most skills exist in both places; `.cursor/skills/` is what you copy into a Cursor repo, and `skills/` contains Claude-compatible variants. They may intentionally diverge.
 
 ## design-specs-writer
 

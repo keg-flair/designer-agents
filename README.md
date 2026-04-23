@@ -19,10 +19,13 @@ These agents are optimized for **screenshots**, **Figma links/component names**,
 - **Docs index**: `docs/README.md`
 - **House style**: `docs/HOUSE_STYLE.md`
 
-## Source of truth (important)
+## Source of truth + divergence policy (important)
 
-- **Canonical definitions live in** `.cursor/skills/` and `.cursor/rules/`.
-- The `skills/` folder contains **Claude-compatible mirrors** of the overlapping skills. Keep them in sync when you change shared skills.
+- **Canonical definitions live in** `.cursor/skills/` and `.cursor/rules/` (Cursor-optimized + enforced).
+- The `skills/` folder contains **Claude-compatible variants** of overlapping skills.
+- **Divergence is allowed and expected**:
+  - `.cursor/skills/` can be stricter (Cursor rules, tool integrations, more prescriptive formats)
+  - `skills/` should stay tool-agnostic and lighter-weight
 
 ## Quick start (Cursor, use in any repo)
 
