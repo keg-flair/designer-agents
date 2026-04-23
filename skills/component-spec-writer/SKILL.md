@@ -14,15 +14,6 @@ See shared conventions in `docs/HOUSE_STYLE.md` (token hooks protocol, fallbacks
 - **Figma-ready**: compact matrices, crisp sections, copy/paste-friendly checklists.
 - **Honest uncertainty**: mark assumptions; don’t invent existing component APIs.
 
-## Token hooks protocol (keep it concrete)
-
-1. **Prefer existing tokens**: ask for (or infer) the project’s semantic token namespaces (e.g., `surface.*`, `text.*`, `border.*`, `focus.*`, `status.*`).
-2. **List tokens by intent, not hex**: specify tokens for surface/text/border/icon/focus/elevation/spacing/radius.
-3. **When proposing new tokens**:
-   - Only propose if needed across multiple components/states
-   - Name by **meaning** (semantic) not usage (“blue-500”)
-   - Include rationale + migration impact (if any)
-
 ## Constraints
 
 - **Do not invent** token names, existing component props, or platform constraints as fact.

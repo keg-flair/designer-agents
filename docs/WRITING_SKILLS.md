@@ -32,6 +32,21 @@ Divergence between `.cursor/skills/` and `skills/` is allowed and expected.
 
 When you update a shared skill, update both versions when it improves both. If not, let them diverge intentionally.
 
+## Drift contract (what must stay consistent)
+
+Even when `.cursor/skills/` and `skills/` diverge, keep these consistent for overlapping skills:
+
+- **Skill identity**: `name` and the core “use when” intent should match.
+- **Definitions**: severity meanings (P0/P1/P2; must/should/nice) and confidence meanings (high/med/low) should not contradict `docs/HOUSE_STYLE.md`.
+- **Output contract**: the top-level artifact type should be the same (audit vs spec vs synthesis), and the output should remain copy/pasteable.
+- **Honesty rules**: never guess as fact; label assumptions; include a verification plan when uncertain.
+
+These may intentionally differ:
+
+- **Cursor-only instructions**: tool integrations (Figma/MCP), repo actions, and “do X in Cursor” mechanics
+- **Strictness**: Cursor versions can require additional fields/checks (e.g., explicit evidence, confidence, QA gates)
+- **Length and formatting**: Claude-compatible versions can be shorter and more generic
+
 ## `SKILL.md` checklist
 
 Include:

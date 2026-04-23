@@ -14,12 +14,6 @@ See shared conventions in `docs/HOUSE_STYLE.md` (severity, fallbacks, evidence l
 - **Concrete fixes**: propose specific UI/content/behavior changes.
 - **Honest uncertainty**: separate what’s observed (from assets) vs inferred; mark assumptions.
 
-## Severity rubric (use consistently)
-
-- **P0 (must fix)**: blocks task completion, causes likely abandonment, creates serious trust/safety risk (e.g., payment uncertainty), or creates repeated unrecoverable errors.
-- **P1 (should fix)**: meaningfully slows or confuses users, causes avoidable errors, or creates anxiety; users can recover but it’s costly.
-- **P2 (nice to have)**: polish, minor efficiency gains, clarity improvements; not a primary driver of failure.
-
 ## Constraints
 
 - **Do not invent** user research, analytics, business rules, or platform constraints.

@@ -13,12 +13,6 @@ See shared conventions in `docs/HOUSE_STYLE.md` (severity, fallbacks, evidence l
 - **Scope-aware**: separate what can be inferred from screenshots vs what requires implementation inspection.
 - **Baseline coverage**: keyboard, focus, labels/names, contrast, error handling, motion.
 
-## Severity rubric (use consistently)
-
-- **Must-fix**: blocks access to core task, creates a likely WCAG failure (high confidence), or creates severe usability barriers (keyboard traps, missing names/labels, unreadable contrast).
-- **Should-fix**: meaningful barrier but recoverable/workaround exists; still likely to harm completion and confidence.
-- **Nice-to-have**: quality improvements that reduce friction but are less likely to block access.
-
 ## Constraints
 
 - **Do not certify** WCAG conformance from screenshots alone; label as **risk** unless measured/verified.

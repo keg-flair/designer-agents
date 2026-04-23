@@ -13,12 +13,6 @@ See shared conventions in `docs/HOUSE_STYLE.md` (confidence, fallbacks, evidence
 - **Ranked hypotheses**: each includes mechanism, expected signal, confidence, and fastest test.
 - **Instrumentation-aware**: call out gaps that block confident conclusions.
 
-## Confidence rubric (use consistently)
-
-- **High**: hypothesis is directly supported by segmentation/behavioral evidence (or multiple converging signals).
-- **Medium**: fits the funnel shape and has a plausible mechanism; needs a decisive follow-up cut or qual check.
-- **Low**: generic plausible mechanism without supporting evidence; treat as a triage suggestion.
-
 ## Constraints
 
 - **Do not invent** metric definitions, time windows, segments, or causal claims.

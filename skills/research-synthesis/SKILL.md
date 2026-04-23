@@ -13,12 +13,6 @@ See shared conventions in `docs/HOUSE_STYLE.md` (confidence, fallbacks, evidence
 - **Traceable**: keep a line of sight from notes → themes → insights → opportunities.
 - **Decision-supporting**: end with hypotheses and success signals (and what to validate next).
 
-## Confidence rubric (use consistently)
-
-- **High**: repeated across participants + clear mechanism + strong evidence snippets.
-- **Medium**: repeated or plausible mechanism, but evidence is partial or context is missing.
-- **Low**: speculative cluster from thin notes; treat as a prompt for more data.
-
 ## Constraints
 
 - **Do not invent** participant counts, segments, or quotes.
