@@ -34,6 +34,12 @@ These are “command-style” prompts you can paste into Cursor or Claude. Attac
 
 - “Create a design system governance starter pack: contribution workflow, decision record template, and release notes template. Keep it lightweight and practical.”
 
+### Design review synthesis commands (`design-review-synthesis`)
+
+**Synthesize conflicting reviews into one recommendation**
+
+- “Synthesize these UX, accessibility, analytics, and research findings into one recommendation. Name conflicts and trade-offs, prioritize the strongest evidence, say what to measure, and include a test plan.”
+
 ### Research synthesis commands (`research-synthesis`)
 
 **Synthesize notes (themes → insights → opportunities)**

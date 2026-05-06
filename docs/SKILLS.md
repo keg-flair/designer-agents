@@ -51,6 +51,13 @@ Most skills exist in both places; `.cursor/skills/` is what you copy into a Curs
 - **Output**: governance starter pack (workflow + decision record + release notes templates)
 - **Golden example**: `docs/examples/design-system-governance.md`
 
+## design-review-synthesis
+
+- **Use when**: multiple reviews, agents, metrics, research findings, or stakeholder inputs disagree and a single recommendation is needed
+- **Inputs**: UX/a11y/analytics/research findings, decision needed, constraints, success metrics
+- **Output**: recommendation + conflicts/trade-offs + rationale + what to measure + test plan
+- **Golden example**: `docs/examples/design-review-synthesis.md`
+
 ## research-synthesis
 
 - **Use when**: turning raw notes into themes → insights → opportunities

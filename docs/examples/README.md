@@ -12,6 +12,7 @@ These files are **reference outputs** for calibrating tone, structure, and depth
 - `ux-audit.md`
 - `accessibility-review.md`
 - `component-spec-writer.md`
+- `design-review-synthesis.md`
 - `design-system-governance.md`
 - `research-synthesis.md`
 - `analytics-insights.md`

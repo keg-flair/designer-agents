@@ -251,6 +251,31 @@
           "Recommends a redesign without validation signals."
         ]
       }
+    },
+    {
+      "id": "design-review-synthesis-conflict",
+      "title": "Design review synthesis with conflicting signals",
+      "skill": "design-review-synthesis",
+      "priority": "P1",
+      "type": "contract",
+      "tags": ["synthesis", "conflict", "decision"],
+      "prompt": "Synthesize these inputs into one recommendation for a dashboard setup flow. UX audit: reduce setup from 5 steps to 3 because users feel the flow is long. Accessibility review: do not collapse everything into one page because grouping and focus order are already weak. Analytics: the biggest leak is data-source auth. Research: two users were unsure what permissions they were granting. We need a recommendation for the next sprint.",
+      "expected": {
+        "required_sections": ["Recommendation", "Conflicts", "Rationale", "What to measure", "Test plan"],
+        "required_terms": ["data-source auth", "grouping", "trade-off", "confidence", "permissions"],
+        "behaviors": [
+          "Gives one recommended path instead of averaging all inputs.",
+          "Prioritizes the strongest behavioral bottleneck while preserving accessibility constraints.",
+          "Names what evidence is missing and what would change the recommendation."
+        ]
+      },
+      "forbidden": {
+        "terms": ["split the difference", "all recommendations are equally important"],
+        "behaviors": [
+          "Ignores either the accessibility conflict or analytics bottleneck.",
+          "Claims the research sample proves broad user behavior."
+        ]
+      }
     }
   ]
 }
