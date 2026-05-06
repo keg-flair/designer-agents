@@ -1,0 +1,256 @@
+{
+  "version": 1,
+  "suite_name": "designer-agent-stress-tests",
+  "cases": [
+    {
+      "id": "ux-audit-vague-flow",
+      "title": "UX audit with vague flow context",
+      "skill": "ux-audit",
+      "priority": "P0",
+      "type": "adversarial",
+      "tags": ["missing-context", "audit", "fallback"],
+      "prompt": "Audit this onboarding flow for friction. I do not have screenshots handy. The product is a B2B analytics dashboard and the flow is signup -> connect data source -> first dashboard.",
+      "expected": {
+        "required_sections": ["Assumptions", "P0", "P1", "Test plan"],
+        "required_terms": ["verification", "highest-value next inputs"],
+        "behaviors": [
+          "Clearly labels the audit as low confidence because no screenshots were provided.",
+          "Still provides useful likely friction points and validation steps.",
+          "Asks no more than three clarifying questions."
+        ]
+      },
+      "forbidden": {
+        "terms": ["I can see", "in the screenshot", "as shown"],
+        "behaviors": [
+          "Invents visible UI details.",
+          "Refuses to proceed because screenshots are missing."
+        ]
+      }
+    },
+    {
+      "id": "a11y-review-missing-focus",
+      "title": "Accessibility review without focus states",
+      "skill": "accessibility-review",
+      "priority": "P0",
+      "type": "contract",
+      "tags": ["a11y", "missing-context", "checklist"],
+      "prompt": "Do an accessibility review for a checkout form. Context: fields for email, shipping address, payment, a disabled Pay button until required fields are valid, and inline errors after submit. I only have this text description.",
+      "expected": {
+        "required_sections": ["Must-fix", "Should-fix", "Verification checklist"],
+        "required_terms": ["keyboard", "focus", "labels", "contrast", "motion", "error"],
+        "behaviors": [
+          "Frames issues as risks to verify, not confirmed WCAG failures.",
+          "Covers keyboard, labels/names, color/contrast, motion, and states.",
+          "Includes concrete checks for disabled and error states."
+        ]
+      },
+      "forbidden": {
+        "terms": ["WCAG compliant", "passes WCAG"],
+        "behaviors": [
+          "Claims compliance without inspecting implementation.",
+          "Relies on color alone for error communication."
+        ]
+      }
+    },
+    {
+      "id": "analytics-insights-partial-funnel",
+      "title": "Analytics hypotheses from partial funnel data",
+      "skill": "analytics-insights",
+      "priority": "P0",
+      "type": "contract",
+      "tags": ["analytics", "hypotheses", "no-invention"],
+      "prompt": "Given this funnel, tell me what UX changes to try. Time window: last 14 days. Segment: trial users on web. Steps: viewed_import_page 10,000; clicked_connect_source 4,200; auth_success 2,900; first_import_complete 1,300. No event definitions are documented.",
+      "expected": {
+        "required_sections": ["What we know", "Top hypotheses", "Instrumentation gaps", "Next analyses"],
+        "required_terms": ["biggest leak", "event definitions", "denominator", "confidence"],
+        "behaviors": [
+          "Identifies the largest visible drop-off from provided counts.",
+          "Does not invent event semantics beyond the names supplied.",
+          "Ranks hypotheses with mechanism, expected signal, fastest test, and risk."
+        ]
+      },
+      "forbidden": {
+        "terms": ["industry benchmark", "statistically significant"],
+        "behaviors": [
+          "Invents benchmarks or significance.",
+          "Treats event names as fully defined behavior."
+        ]
+      }
+    },
+    {
+      "id": "component-spec-token-first",
+      "title": "Component spec with token-first constraints",
+      "skill": "component-spec-writer",
+      "priority": "P0",
+      "type": "contract",
+      "tags": ["design-system", "tokens", "states"],
+      "prompt": "Write a component spec for a Status Badge used in tables and cards. It needs success, warning, danger, neutral, and info variants, plus loading and disabled states. Keep it engineering-ready.",
+      "expected": {
+        "required_sections": ["Anatomy", "Variants", "States", "Content rules", "Token hooks", "Accessibility", "QA checklist"],
+        "required_terms": ["invalid combinations", "loading", "disabled", "contrast", "semantic"],
+        "behaviors": [
+          "Prefers existing variants and semantic token hooks before one-off styles.",
+          "Defines content length and truncation/wrapping guidance.",
+          "Calls out invalid combinations."
+        ]
+      },
+      "forbidden": {
+        "terms": ["#00ff00", "blue-500"],
+        "behaviors": [
+          "Uses hardcoded color values as the primary spec.",
+          "Omits loading or disabled behavior."
+        ]
+      }
+    },
+    {
+      "id": "design-spec-open-questions",
+      "title": "Feature spec with unresolved decisions",
+      "skill": "design-specs-writer",
+      "priority": "P1",
+      "type": "adversarial",
+      "tags": ["spec", "open-questions", "edge-cases"],
+      "prompt": "Write a design spec for saved dashboard filters. Users can save, rename, duplicate, share, and delete filters. Some filters are private, some are shared with a team. We have not decided permissions yet.",
+      "expected": {
+        "required_sections": ["Assumptions", "Scope", "Interactions", "Edge cases", "Accessibility", "Open questions", "Test plan"],
+        "required_terms": ["permissions", "private", "shared", "empty", "error"],
+        "behaviors": [
+          "Does not finalize permission rules that are explicitly undecided.",
+          "Identifies edge cases around sharing, deletion, and rename conflicts.",
+          "Includes a verification plan."
+        ]
+      },
+      "forbidden": {
+        "terms": ["admins only can", "owners always"],
+        "behaviors": [
+          "Invents a permission model as fact.",
+          "Skips open questions."
+        ]
+      }
+    },
+    {
+      "id": "research-synthesis-thin-notes",
+      "title": "Research synthesis from thin notes",
+      "skill": "research-synthesis",
+      "priority": "P1",
+      "type": "adversarial",
+      "tags": ["research", "evidence", "confidence"],
+      "prompt": "Synthesize these notes from 3 users evaluating a data import flow: P1: 'I am not sure what permissions this needs.' P2: 'The CSV errors are hard to fix.' P3: 'I expected a sample dashboard after import.' Turn this into themes, insights, opportunities, and follow-up questions.",
+      "expected": {
+        "required_sections": ["Themes", "Insights", "Opportunities", "Follow-up questions"],
+        "required_terms": ["evidence", "confidence", "hypothesis"],
+        "behaviors": [
+          "Uses the snippets as evidence without overstating sample size.",
+          "Keeps confidence appropriately low or medium.",
+          "Turns insights into falsifiable hypotheses or success signals."
+        ]
+      },
+      "forbidden": {
+        "terms": ["most users", "majority", "statistically"],
+        "behaviors": [
+          "Overgeneralizes from three snippets.",
+          "Invents participant demographics or intent."
+        ]
+      }
+    },
+    {
+      "id": "empty-states-offline-error",
+      "title": "State plan with offline and failure modes",
+      "skill": "empty-states",
+      "priority": "P1",
+      "type": "contract",
+      "tags": ["states", "recovery", "a11y"],
+      "prompt": "Create an empty/loading/error/success state plan for a Notifications center in a SaaS app. It must cover first-time empty, all caught up, offline, server error, and permissions blocked.",
+      "expected": {
+        "required_sections": ["State taxonomy", "State matrix", "Copy patterns", "Recovery", "Accessibility", "QA checklist"],
+        "required_terms": ["offline", "permissions", "loading", "success", "retry"],
+        "behaviors": [
+          "Distinguishes true empty from success empty.",
+          "Defines recovery actions for offline, server error, and permissions blocked.",
+          "Communicates state with more than color."
+        ]
+      },
+      "forbidden": {
+        "terms": [],
+        "behaviors": [
+          "Treats every empty state as the same message.",
+          "Omits recovery actions."
+        ]
+      }
+    },
+    {
+      "id": "competitive-audit-no-competitors",
+      "title": "Competitive audit without named competitors",
+      "skill": "competitive-design-audit",
+      "priority": "P1",
+      "type": "fallback",
+      "tags": ["competitive", "assumptions", "decision"],
+      "prompt": "Run a competitive design audit for bulk user invite flows in B2B admin tools. I do not have competitor names. The decision is whether we should support CSV upload in v1.",
+      "expected": {
+        "required_sections": ["Assumptions", "Market patterns", "Trade-offs", "Recommendation", "What to capture next", "Test plan"],
+        "required_terms": ["CSV", "manual entry", "risk", "v1"],
+        "behaviors": [
+          "States assumptions about comparator selection.",
+          "Gives one recommended approach with an escape hatch.",
+          "Frames what evidence to capture next."
+        ]
+      },
+      "forbidden": {
+        "terms": ["I reviewed", "screenshots show"],
+        "behaviors": [
+          "Claims to have inspected competitors without provided evidence.",
+          "Provides a long menu without a recommendation."
+        ]
+      }
+    },
+    {
+      "id": "figma-triage-bad-node",
+      "title": "Figma triage with likely bad node target",
+      "skill": "figma-triage",
+      "priority": "P0",
+      "type": "tool-discipline",
+      "tags": ["figma", "mcp", "safe-write"],
+      "prompt": "Update this Figma screen to match our new empty state pattern: https://www.figma.com/file/example?node-id=maybe-bad. Make the changes directly.",
+      "expected": {
+        "required_sections": ["Assumptions", "Next steps", "Stop conditions"],
+        "required_terms": ["node-id", "scope", "confirm"],
+        "behaviors": [
+          "Triages the request before attempting writes.",
+          "Requests or verifies a valid target node and desired scope.",
+          "States safe stop conditions for write actions."
+        ]
+      },
+      "forbidden": {
+        "terms": ["I updated", "changes are live"],
+        "behaviors": [
+          "Claims a Figma write without tool evidence.",
+          "Proceeds as if the node is valid without verification."
+        ]
+      }
+    },
+    {
+      "id": "multi-agent-conflict-synthesis",
+      "title": "Synthesize conflicting agent recommendations",
+      "skill": "cross-agent",
+      "priority": "P0",
+      "type": "e2e",
+      "tags": ["multi-agent", "synthesis", "conflict"],
+      "prompt": "Three agents reviewed the same dashboard setup flow. UX audit says reduce steps from 5 to 3. Accessibility review says the current single-page form is already too dense and needs better grouping. Analytics says the biggest drop is at data-source auth. Synthesize a recommendation and call out conflicts.",
+      "expected": {
+        "required_sections": ["Recommendation", "Conflicts", "Rationale", "Test plan"],
+        "required_terms": ["data-source auth", "grouping", "trade-off", "measure"],
+        "behaviors": [
+          "Does not average the recommendations into a vague compromise.",
+          "Prioritizes the highest-confidence behavioral bottleneck.",
+          "Names the conflict between fewer steps and cognitive/accessibility density."
+        ]
+      },
+      "forbidden": {
+        "terms": [],
+        "behaviors": [
+          "Ignores one of the three agents.",
+          "Recommends a redesign without validation signals."
+        ]
+      }
+    }
+  ]
+}

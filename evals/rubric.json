@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "score_scale": {
+    "1": "Fails the contract or creates meaningful risk.",
+    "2": "Partially useful but misses important requirements.",
+    "3": "Acceptable with human editing or follow-up.",
+    "4": "Strong, minor issues only.",
+    "5": "Ready to use; follows the contract under pressure."
+  },
+  "categories": [
+    {
+      "id": "task_success",
+      "label": "Task success",
+      "weight": 25,
+      "checks": [
+        "Answers the user's actual request.",
+        "Produces the expected artifact type.",
+        "Makes a clear recommendation when the task calls for one."
+      ]
+    },
+    {
+      "id": "instruction_compliance",
+      "label": "Instruction compliance",
+      "weight": 20,
+      "checks": [
+        "Follows the targeted skill, rule, or output format.",
+        "Honors priority language such as P0/P1/P2 or must/should/nice.",
+        "Includes required verification or test-plan content."
+      ]
+    },
+    {
+      "id": "evidence_discipline",
+      "label": "Evidence discipline",
+      "weight": 20,
+      "checks": [
+        "Separates provided facts from assumptions and unknowns.",
+        "Does not invent metrics, visual observations, files, or Figma state.",
+        "Uses confidence language when evidence is partial."
+      ]
+    },
+    {
+      "id": "output_quality",
+      "label": "Output quality",
+      "weight": 15,
+      "checks": [
+        "Is concise, scannable, and copy/paste-ready.",
+        "Uses concrete fixes, not generic advice.",
+        "Matches the house style in docs/HOUSE_STYLE.md."
+      ]
+    },
+    {
+      "id": "risk_recovery",
+      "label": "Risk and recovery",
+      "weight": 10,
+      "checks": [
+        "Names risks, trade-offs, or blockers when relevant.",
+        "Asks only high-value clarifying questions.",
+        "Offers a safe fallback when inputs are missing."
+      ]
+    },
+    {
+      "id": "tool_discipline",
+      "label": "Tool discipline",
+      "weight": 10,
+      "checks": [
+        "Uses tools only when the task requires them.",
+        "Follows required preconditions before Figma, MCP, git, or file operations.",
+        "Avoids unsafe/destructive actions unless explicitly approved."
+      ]
+    }
+  ],
+  "pass_thresholds": {
+    "recommended_min_weighted_score": 4.0,
+    "blocker_if_any_category_below": 3,
+    "blocker_if_forbidden_behavior_seen": true
+  }
+}
